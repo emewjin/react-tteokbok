@@ -114,5 +114,6 @@ const Filter = styled(Button)`
 
   & > i {
     margin: 0 5px;
+    pointer-events: none;
   }
 `;
