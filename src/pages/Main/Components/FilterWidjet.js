@@ -17,12 +17,7 @@ const STATUS = [
   { option: '완료된 프로젝트', id: 'done' },
 ];
 
-export default function FilterWidjet({
-  condition,
-  isClicked,
-  toggleFilter,
-  getFilteredData,
-}) {
+export default function FilterWidjet({ condition, isClicked }) {
   const { filterOption, setFilterOption } = useFilterContext();
   const tempRangeRef = useRef({
     progressMin: 0,
