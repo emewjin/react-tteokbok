@@ -20,6 +20,9 @@ export default function FilterNav() {
   const toggleFilter = e => {
     const name = e.target.getAttribute('name');
     setClickedFilter(name);
+    if (clickedFilter === name) {
+      setClickedFilter('');
+    }
   };
 
   const resetFilter = () => {
