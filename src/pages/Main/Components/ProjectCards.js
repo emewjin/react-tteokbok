@@ -13,7 +13,7 @@ const SORT = {
   '최다 금액순': 'amount',
 };
 
-export default function ProjectCards({ getFilteredData }) {
+export default function ProjectCards() {
   const { filterOption } = useFilterContext();
   const history = useHistory();
   const location = useLocation();
