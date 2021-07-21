@@ -42,16 +42,6 @@ export default function ProjectCards({ getFilteredData }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortBtnValue, filterOption]);
 
-  //이동한 url에서 데이터 정보를 받아와서 fetch
-  useEffect(() => {
-    fetch(`${API.PROJECT}${location.search}`)
-      .then(res => res.json())
-      .then(res =>
-        setMainData(res.data.projects.slice(0, nextCountRef.current))
-      );
-  }, [location.search]);
-
-  // To Do : 백엔드 통신 때 연결 테스트
   const getMoreData = () => {
     fetch(`${API.PROJECT}${location.search}`, {
       headers: { Authorization: localStorage.getItem('token') },
@@ -68,15 +58,9 @@ export default function ProjectCards({ getFilteredData }) {
         );
         nextCountRef.current += 6;
         setMainData(prev => [...prev, ...moreData]);
-      });
+      })
+      .catch(error => console.log(error));
   };
-
-  //옵션 클릭 시 페이지 이동
-  useEffect(() => {
-    const query = makeQuery();
-    query && history.push(`?${query}`);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sortBtnValue, filterOption]);
 
   //이동한 url에서 데이터 정보를 받아와서 fetch
   useEffect(() => {
