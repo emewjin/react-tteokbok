@@ -28,10 +28,20 @@ export default function ProjectCards() {
     fetch(API.PROJECT, {
       headers: { Authorization: localStorage.getItem('token') },
     })
-      .then(res => res.json())
+      .then(res => {
+        if (res.status === 200) {
+          return res.json();
+        } else {
+          throw new Error('정보를 불러올 수 없습니다. 다시 접속해주세요');
+        }
+      })
       .then(res => {
         setMainData(res.data.projects.slice(0, nextCountRef.current));
         setProjectsCount(res.data.num_projects);
+      })
+      .catch(error => {
+        alert(error.message);
+        console.log(error);
       });
   }, []);
 
@@ -47,17 +57,33 @@ export default function ProjectCards() {
     fetch(`${API.PROJECT}${location.search}`, {
       headers: { Authorization: localStorage.getItem('token') },
     })
-      .then(res => res.json())
+      .then(res => {
+        if (res.status === 200) {
+          return res.json();
+        } else {
+          throw new Error('정보를 불러올 수 없습니다. 다시 접속해주세요');
+        }
+      })
       .then(res =>
         setMainData(res.data.projects.slice(0, nextCountRef.current))
-      );
+      )
+      .catch(error => {
+        alert(error.message);
+        console.log(error);
+      });
   }, [location.search]);
 
   const getMoreData = () => {
     fetch(`${API.PROJECT}${location.search}`, {
       headers: { Authorization: localStorage.getItem('token') },
     })
-      .then(res => res.json())
+      .then(res => {
+        if (res.status === 200) {
+          return res.json();
+        } else {
+          throw new Error('정보를 불러올 수 없습니다. 다시 시도해주세요');
+        }
+      })
       .then(res => {
         if (mainData.length === res.data.projects.length) {
           alert('더이상 불러올 데이터가 없습니다');
@@ -70,10 +96,13 @@ export default function ProjectCards() {
         nextCountRef.current += 6;
         setMainData(prev => [...prev, ...moreData]);
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        alert(error.message);
+        console.log(error);
+      });
   };
 
-  const openSortMenu = e => {
+  const openSortMenu = () => {
     setIsOpened(!isOpened);
   };
 

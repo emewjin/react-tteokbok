@@ -79,7 +79,10 @@ export default function ProjectStart() {
           username: res.data.user.username,
         })
       )
-      .catch(err => console.log(err));
+      .catch(error => {
+        alert('유저 정보를 불러오는 데 실패했습니다.');
+        console.log(error);
+      });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -111,16 +114,25 @@ export default function ProjectStart() {
       },
       body: post_form_data,
     })
-      .then(res => res.json())
+      .then(res => {
+        if (res.status === 200 || res.status === 201) {
+          return res.json();
+        } else {
+          throw new Error('에러가 발생했습니다. :(');
+        }
+      })
       .then(alert('등록 성공!'))
       .then(history.push('/'))
-      .catch(err => console.log(err));
+      .catch(error => {
+        alert(error.message);
+        console.log(error);
+      });
   };
 
   return (
     <Container>
       <WarningTxt>ver 1.0 | 두 탭의 모든 항목을 입력하셔야 합니다</WarningTxt>
-      <WarningTxt>모든 입력 내용은 자동 저장됩니다 :)</WarningTxt>
+      <WarningTxt>모든 입력 내용은 자동 저장됩니다.</WarningTxt>
       <ContainerTitle isFilled={!!form.title}>
         <h1>{form.title || TITLE[randomTitleNum]}</h1>
         <WholeSubmitBtn onClick={postForm}>
