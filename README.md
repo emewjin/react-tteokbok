@@ -14,9 +14,16 @@
 창작자는 자신만의 아이디어를 프로젝트로 소개하고, 후원자는 관심있는 프로젝트를 검색/정렬/필터링 하여 펀딩할 수 있는 텀블벅 사이트를 모티브로 삼았습니다.
 떡볶닷컴은 한국의 분식을 세계로 알리자는 뜻을 담아, 분식을 주제로 한 창의적인 프로젝트 펀딩 사이트입니다.
 
+## 🎯 프로젝트 목적
+- 리액트 함수형 컴포넌트, hooks를 이용하는 데 익숙해지기
+- 스타일드 컴포넌트를 통해 css in js를 이용해보고 css/scss와 비교해보기
+- 배포까지 진행해보기
+
+[📎 프로젝트 후기](https://velog.io/@1703979/%ED%85%80%EB%B8%94%EB%B2%85-%ED%81%B4%EB%A1%A0-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%ED%9B%84%EA%B8%B0)
+
 ## 👫 팀원
 
-- FE 3인: [노선경(PM)](velog.io/@celline1637), [송가람](velog.io/@sgr2134), [임유진](velog.io/@1703979)
+- FE 3인: [노선경(PM)](https://velog.io/@celline1637), [송가람](https://velog.io/@sgr2134), [임유진](https://emewjin.github.io/)
 - BE 2인: [이승무](https://goback.oopy.io/), [최준식](https://velog.io/@junsikchoi) ([BE Reop](https://github.com/wecode-bootcamp-korea/20-2nd-tteokbokcom-backend))
 
 ## 📅 프로젝트 기간
@@ -32,7 +39,7 @@
 ## 👩🏻‍🌾 제가 담당한 구현 사항이예요
 
 **공통**
-- context api를 이용한 state 관리. [(좀 더 상세한 내용은 이 글을 참고해주세요)](https://emewjin.github.io/react/contextapi)
+- context api를 이용한 state 관리. [(좀 더 상세한 내용은 📎 이 글을 참고해주세요)](https://emewjin.github.io/react/contextapi)
 - 스타일드 컴포넌트의 변수 및 공통 세팅 사항 작성
 - 모바일 중심의 반응형 디자인 구현
 - AWS S3를 이용한 정적 웹 배포 + Github Action을 이용한 자동 배포
