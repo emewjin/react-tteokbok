@@ -34,18 +34,20 @@
 **공통**
 - context api를 이용한 state 관리. [(좀 더 상세한 내용은 이 글을 참고해주세요)](https://emewjin.github.io/react/contextapi)
 - 스타일드 컴포넌트의 변수 및 공통 세팅 사항 작성
+- 모바일 중심의 반응형 디자인 구현
 - AWS S3를 이용한 정적 웹 배포 + Github Action을 이용한 자동 배포
 
-**프로젝트 등록 view**
+**[프로젝트 등록 view](https://github.com/wecode-bootcamp-korea/20-2nd-tteokbokcom-frontend/tree/master/src/pages/ProjectStart)**
 - 두 개의 탭에 각각 다른 입력 폼을 그려내고 다양한 데이터를 입력받음
 - 입력받은 데이터를 FormData로 감싸 서버로 POST
 - 각 탭의 항목이 모두 작성되었는지 검사해 UI로 표현
 - keyword 입력 항목에서의 유효성 검사 등을 진행
 
-**프로젝트 리스트 (메인 화면)**
+**[프로젝트 리스트 (메인 화면)](https://github.com/wecode-bootcamp-korea/20-2nd-tteokbokcom-frontend/tree/master/src/pages/Main)**
 - 다중 filter, sorting 기능 구현
-- 검색창 검색 기능 구현 및 filter, sorting과 연결
-- 좋아요 기능 메인-상세-유저 페이지 연결
+- filter, sorting, search 값에 맞는 쿼리스트링을 구성해 서버에 data 요청, 뷰에 그려냄
+- PATCH http 메소드로 프로젝트에 대한 좋아요 기능 구현
+- 메인, 마이페이지에서 공통으로 사용할 수 있는 [프로젝트 카드 컴포넌트](https://github.com/wecode-bootcamp-korea/20-2nd-tteokbokcom-frontend/tree/master/src/components/ProjectCard) 구현
 
 ## 🤝🏻 프로젝트 협업은 이렇게 진행됐어요
 - 매일 짧고 굵게, Daily Scrum을 통해 현재의 blocker, 어제 한 일, 오늘 할 일을 있는 그대로 담백하게 공유
