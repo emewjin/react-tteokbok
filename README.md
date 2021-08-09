@@ -1,7 +1,8 @@
 # Team tteokbok.com
 
 > ## 😎 Our Website : http://tteokbok.com/
-> 😢 지금은 서버가 켜져있지 않아 데이터를 받을 수 없어요. 이용에 불편을 드려 죄송합니다.
+> 😢 지금은 서버가 켜져있지 않아 데이터를 표시할 수 없어요. 이용에 불편을 드려 죄송합니다.  
+> 📺 대신 [유튜브](https://youtu.be/OAnJsVrR2Is)에서 데모영상을 확인하실 수 있어요
 >
 > ## 📎 Route Path
 >
@@ -41,7 +42,7 @@
 **공통**
 - context api를 이용한 state 관리. [(좀 더 상세한 내용은 📎 이 글을 참고해주세요)](https://emewjin.github.io/react/contextapi)
 - 스타일드 컴포넌트의 변수 및 공통 세팅 사항 작성
-- 모바일 중심의 반응형 디자인 구현
+- flex, grid, rem, media query를 이용한 모바일 중심의 반응형 디자인 구현
 - AWS S3를 이용한 정적 웹 배포 + Github Action을 이용한 자동 배포
 
 **[프로젝트 등록 view](https://github.com/emewjin/react-tteokbok/tree/master/src/pages/ProjectStart)**
